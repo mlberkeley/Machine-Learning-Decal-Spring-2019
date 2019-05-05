@@ -1,0 +1,33 @@
+NOTE: You do not have to use to provided skeleton model.py if you
+want the challenge of approaching this task on your own.
+
+Here is how the skeleton approaches the problem of sentiment analysis.
+
+First we vectorize all the words in the title and text of the reviews.
+
+Then given a title and text of a single review we use two separate LSTMs.
+The first goes through all the words of the title and we record its final
+cell state.
+The second goes through all the words of the text and we record its final
+cell state as well.
+
+Then we concatenate these two cell states to get a single vector that
+represents the entire review.
+
+We then perform a nonlinear mapping to a hidden layer to allow the model
+to combine its insights regarding both the title and reviews.
+
+Finally we map the hidden layer to a confidence value between 0 and 1.
+Values closer to 0 indicate the model thinks the review's negative and
+vice versa.
+
+This confidence value is used in computing loss and accuracy.
+
+Note this model is fairly basic.  You are welcome to extend, modify, or
+entirely change the model as you see fit! Especially if you find completing
+the skeleton easy.
+
+IMPORTANT: While working on the model to prevent having to deal with a
+ton of errors earlier you can do the following.  After having completed
+the code until line x, comment all code after line x and run it.  Make
+sure there are no errors with dimensions or anything else.

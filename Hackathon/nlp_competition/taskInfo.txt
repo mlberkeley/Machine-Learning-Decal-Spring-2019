@@ -1,0 +1,35 @@
+Source:
+http://www.cs.jhu.edu/~mdredze/datasets/sentiment/index2.html
+Sentiment Analysis Dataset Reviews for Electronic Devices on Amazon.
+
+trainingDataset.json holds a list of reviews.  Each review is stored as a 
+dictionary with 3 keys: 'rating', 'title', 'review_text'.  Rating is the
+star rating from 1 to 5.  Title is a short string—the title of the review.
+The body of text constituting the review is in review_text.  There are 10522
+reviews in the training dataset
+
+testDataset.json holds a similar list of reviews except only with the 'title'
+and 'review_text' keys.  That is to say the 'rating' information is withheld
+in this subset of the dataset.  There are 2631 reviews in the test dataset.
+
+Task: Predict whether the reviews in the testDataset were associated with positive
+or negative reviews.  A positive review is a 4 or 5 star review.  And a negative
+review is a 1 or 2 star review.  Note that this dataset contains no 3 star reviews.
+Upload your final predictions to a file 'YOUR NAME.json' simply as a binary list.
+predictions[i] = True/1 would imply your model believes testDataset[i] holds a positive
+review and vice versa.  Performance will be judged based on normalized accuracy.  That is
+the average between accuracy on positive reviews and the accuracy between negative reviews.
+
+Notes:
+You will find skeleton code for a basic model in model.py.  Feel free to expand
+or use a completely different model!  Make sure to read skeletonInfo.txt for more
+information regarding the skeleton.
+
+You'll likely have to represent words in some numerical fashion.  Word vectors are
+highly recommended as supposed to one hot encodings. (Why?) See wordVectors.py
+
+This dataset is skewed towards positive reviews.  Keep this in mind as we are judging
+normalized accuracy.
+
+It is surprisingly easy to overfit a model on this dataset.  Keep this in mind while
+training your model.
